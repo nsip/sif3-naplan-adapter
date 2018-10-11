@@ -21,10 +21,19 @@
     <modules>
         <module>sif3-naplan-provider</module>
         <module>sif3-naplan-consumer</module>
+        <module>naplan-api</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <!-- Modules -->
+            <dependency>
+                <groupId>sif3.au.naplan</groupId>
+                <artifactId>naplan-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>            
+
+
             <!-- SIF3 -->
             <dependency>
                 <groupId>sif3.framework</groupId>

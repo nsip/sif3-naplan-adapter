@@ -1,3 +1,7 @@
+.project
+.settings
+.classpath
 .DS_Store
 sif3-naplan-consumer/target
 sif3-naplan-provider/target
+naplan-api/target
