@@ -16,6 +16,7 @@
         <version.sif3.datamodel>au-3.4.3</version.sif3.datamodel>
 
         <version.slf4j>1.7.25</version.slf4j>
+        <version.junit>4.12</version.junit>
     </properties>
 
     <modules>
@@ -38,6 +39,11 @@
             <dependency>
                 <groupId>sif3.framework</groupId>
                 <artifactId>sif3-infra-rest</artifactId>
+                <version>${version.sif3.framework}</version>
+            </dependency>
+            <dependency>
+                <groupId>sif3.framework</groupId>
+                <artifactId>sif3-common</artifactId>
                 <version>${version.sif3.framework}</version>
             </dependency>
             <dependency>
