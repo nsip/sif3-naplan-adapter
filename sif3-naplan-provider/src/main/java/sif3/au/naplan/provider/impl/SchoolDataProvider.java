@@ -3,7 +3,7 @@ package sif3.au.naplan.provider.impl;
 import sif3.au.naplan.api.model.NaplanResponse;
 import sif3.au.naplan.provider.config.NaplanContext;
 import sif3.au.naplan.provider.service.NaplanService;
-import sif3.au.naplan.provider.service.SchoolListService;
+import sif3.au.naplan.provider.service.SchoolDataService;
 import sif3.au.naplan.sif.SIFObjectInfo;
 
 public class SchoolDataProvider extends NaplanStringProvider {
@@ -15,7 +15,7 @@ public class SchoolDataProvider extends NaplanStringProvider {
 
     @Override
     protected NaplanService<NaplanResponse> getService() {
-        SchoolListService service = NaplanContext.getBean(SchoolListService.class);
+        SchoolDataService service = NaplanContext.getBean(SchoolDataService.class);
         return service;
     }
 
