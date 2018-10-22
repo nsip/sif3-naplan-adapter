@@ -1,37 +1,52 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>sif3.au.naplan</groupId>
-        <artifactId>sif3-naplan-adapter</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>sif3.au.naplan</groupId>
+		<artifactId>sif3-naplan-adapter</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 
-    <artifactId>sif3-naplan-consumer</artifactId>
-    <name>sif3-naplan-consumer</name>
-    <description>SIF Consumer proof of concept for talking to the Naplan Provider</description>
-    <packaging>jar</packaging>
+	<artifactId>sif3-naplan-consumer</artifactId>
+	<name>sif3-naplan-consumer</name>
+	<description>SIF Consumer proof of concept for talking to the Naplan Provider</description>
+	<packaging>jar</packaging>
 
-    <dependencies>
-        <!-- SIF -->
-        <dependency>
-            <groupId>sif3.framework</groupId>
-            <artifactId>sif3-infra-rest</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>sif3.datamodel</groupId>
-            <artifactId>sifau-datamodel</artifactId>
-        </dependency>
+	<dependencies>
+		<!-- SIF -->
+		<dependency>
+			<groupId>sif3.framework</groupId>
+			<artifactId>sif3-infra-rest</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sif3.datamodel</groupId>
+			<artifactId>sifau-datamodel</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sif3.au.naplan</groupId>
+			<artifactId>sif3-naplan-common</artifactId>
+		</dependency>
 
-        <!-- Java -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-        </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.11.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.10</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-    <build>
-        <finalName>NaplanConsumer</finalName>
-    </build>
+	<build>
+		<finalName>NaplanConsumer</finalName>
+	</build>
 
 </project>

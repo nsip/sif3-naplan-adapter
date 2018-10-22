@@ -29,7 +29,7 @@ public class NaplanRequest {
 
 		String url = buildUrl();
 
-		LOG.info("\nAuthorization: " + authentication + "\ntimestamp: " + timestamp + "\n\n");
+		LOG.trace("\nAuthorization: " + authentication + "\ntimestamp: " + timestamp + "\n\n");
 		
 		Request request = new Request.Builder()
 				.url(url)
