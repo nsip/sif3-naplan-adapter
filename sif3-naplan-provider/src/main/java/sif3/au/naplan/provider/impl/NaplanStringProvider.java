@@ -26,7 +26,7 @@ public abstract class NaplanStringProvider extends NaplanProvider<NaplanResponse
                     schoolInfoRefId = predicate.getValue();
                 }
             }
-            return sanitiseResponse(getService().retrieve(schoolInfoRefId, metadata));
+            return sanitiseResponse(getService().retrieve(schoolInfoRefId, pagingInfo, metadata));
         } catch (PersistenceException | SIFException ex) {
             throw ex;
         } catch (Exception ex) {
@@ -38,7 +38,7 @@ public abstract class NaplanStringProvider extends NaplanProvider<NaplanResponse
     public Object retrieve(SIFZone zone, SIFContext context, PagingInfo pagingInfo, RequestMetadata metadata, ResponseParameters customResponseParams)
             throws PersistenceException, UnsupportedQueryException, DataTooLargeException, SIFException {
         try {
-            return sanitiseResponse(getService().retrieve(metadata));
+            return sanitiseResponse(getService().retrieve(pagingInfo, metadata));
         } catch (PersistenceException | SIFException ex) {
             throw ex;
         } catch (Exception ex) {

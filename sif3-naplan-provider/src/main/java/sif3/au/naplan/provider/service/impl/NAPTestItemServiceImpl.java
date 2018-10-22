@@ -10,6 +10,7 @@ import sif3.au.naplan.credentials.NaplanCredentials;
 import sif3.au.naplan.provider.service.NAPTestItemService;
 import sif3.au.naplan.provider.service.NaplanCredentialsService;
 import sif3.au.naplan.sif.SIFObjectInfo;
+import sif3.common.model.PagingInfo;
 import sif3.common.model.RequestMetadata;
 
 @Service
@@ -26,9 +27,10 @@ public class NAPTestItemServiceImpl extends BaseNaplanServiceImpl<NAPTestItemTyp
     }
 
     @Override
-    public NAPTestItemCollectionType retrieve(RequestMetadata metadata) throws Exception {
+    public NAPTestItemCollectionType retrieve(PagingInfo pagingInfo, RequestMetadata metadata) throws Exception {
         // You would look at caching this locally instead of going back to the api every time
         // and parsing the api response. Will be slow but proves the concept.
+        // Paging ignored for now
         NaplanCredentials credentials = naplanCredentialsService.getCredentialsForRequest(metadata);
         return extractResponse(naplanClient.testDataClient(credentials.getApplicationKey(), credentials.getPassword()).prepareRequest().executeGet());
     }

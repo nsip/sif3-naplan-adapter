@@ -9,6 +9,7 @@ import sif3.au.naplan.credentials.NaplanCredentials;
 import sif3.au.naplan.provider.service.NaplanCredentialsService;
 import sif3.au.naplan.provider.service.TestDataService;
 import sif3.au.naplan.sif.SIFObjectInfo;
+import sif3.common.model.PagingInfo;
 import sif3.common.model.RequestMetadata;
 
 @Service
@@ -25,7 +26,8 @@ public class TestDataServiceImpl extends BaseNaplanServiceImpl<NaplanResponse, N
     }
 
     @Override
-    public NaplanResponse retrieve(RequestMetadata metadata) throws Exception {
+    public NaplanResponse retrieve(PagingInfo pagingInfo, RequestMetadata metadata) throws Exception {
+        // Paging ignored for now
         NaplanCredentials credentials = naplanCredentialsService.getCredentialsForRequest(metadata);
         return naplanClient.testDataClient(credentials.getApplicationKey(), credentials.getPassword()).prepareRequest().executeGet();
     }

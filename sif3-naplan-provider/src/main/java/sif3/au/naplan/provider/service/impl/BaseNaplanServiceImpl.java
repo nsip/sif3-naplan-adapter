@@ -13,6 +13,7 @@ import sif3.common.exception.SIFException;
 import sif3.common.exception.UnmarshalException;
 import sif3.common.exception.UnsupportedMediaTypeExcpetion;
 import sif3.common.exception.UnsupportedQueryException;
+import sif3.common.model.PagingInfo;
 import sif3.common.model.RequestMetadata;
 import sif3.common.ws.ErrorDetails;
 
@@ -21,12 +22,12 @@ public abstract class BaseNaplanServiceImpl<S, M> implements NaplanService<M> {
     protected abstract SIFObjectInfo<S, M> getSIFObjectInfo();
 
     @Override
-    public M retrieve(RequestMetadata metadata) throws Exception {
+    public M retrieve(PagingInfo pagingInfo, RequestMetadata metadata) throws Exception {
         throw new UnsupportedQueryException("Query without service path not supported by Naplan API.");
     }
 
     @Override
-    public M retrieve(String schoolInfoRefId, RequestMetadata metadata) throws Exception {
+    public M retrieve(String schoolInfoRefId, PagingInfo pagingInfo, RequestMetadata metadata) throws Exception {
         throw new UnsupportedQueryException("Query by service path not supported by Naplan API.");
     }
 
