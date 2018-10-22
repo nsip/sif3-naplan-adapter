@@ -1,93 +1,123 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>sif3.au.naplan</groupId>
-    <artifactId>sif3-naplan-adapter</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>sif3-naplan-adapter</name>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>sif3.au.naplan</groupId>
+	<artifactId>sif3-naplan-adapter</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>sif3-naplan-adapter</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 
-        <version.sif3.framework>0.13.0</version.sif3.framework>
-        <version.sif3.datamodel>au-3.4.3</version.sif3.datamodel>
+		<version.sif3.framework>0.13.0</version.sif3.framework>
+		<version.sif3.datamodel>au-3.4.3</version.sif3.datamodel>
 
-        <version.slf4j>1.7.25</version.slf4j>
-        <version.junit>4.12</version.junit>
-    </properties>
+		<version.slf4j>1.7.25</version.slf4j>
+		<version.junit>4.12</version.junit>
+		<version.spring>4.3.19.RELEASE</version.spring>
+		<version.spring.data>1.11.15.RELEASE</version.spring.data>
+	</properties>
 
-    <modules>
-        <module>sif3-naplan-provider</module>
-        <module>sif3-naplan-consumer</module>
-        <module>naplan-api</module>
-    </modules>
+	<modules>
+		<module>sif3-naplan-common</module>
+		<module>sif3-naplan-provider</module>
+		<module>sif3-naplan-consumer</module>
+		<module>naplan-api</module>
+	</modules>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- Modules -->
-            <dependency>
-                <groupId>sif3.au.naplan</groupId>
-                <artifactId>naplan-api</artifactId>
-                <version>${project.version}</version>
-            </dependency>            
+	<dependencyManagement>
+		<dependencies>
+			<!-- Modules -->
+			<dependency>
+				<groupId>sif3.au.naplan</groupId>
+				<artifactId>naplan-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sif3.au.naplan</groupId>
+				<artifactId>sif3-naplan-common</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 
 
-            <!-- SIF3 -->
-            <dependency>
-                <groupId>sif3.framework</groupId>
-                <artifactId>sif3-infra-rest</artifactId>
-                <version>${version.sif3.framework}</version>
-            </dependency>
-            <dependency>
-                <groupId>sif3.framework</groupId>
-                <artifactId>sif3-common</artifactId>
-                <version>${version.sif3.framework}</version>
-            </dependency>
-            <dependency>
-                <groupId>sif3.datamodel</groupId>
-                <artifactId>sifau-datamodel</artifactId>
-                <version>${version.sif3.datamodel}</version>
-            </dependency>
+			<!-- SIF3 -->
+			<dependency>
+				<groupId>sif3.framework</groupId>
+				<artifactId>sif3-infra-rest</artifactId>
+				<version>${version.sif3.framework}</version>
+			</dependency>
+			<dependency>
+				<groupId>sif3.framework</groupId>
+				<artifactId>sif3-common</artifactId>
+				<version>${version.sif3.framework}</version>
+			</dependency>
+			<dependency>
+				<groupId>sif3.datamodel</groupId>
+				<artifactId>sifau-datamodel</artifactId>
+				<version>${version.sif3.datamodel}</version>
+			</dependency>
 
-            <!-- Logging -->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${version.slf4j}</version>
-            </dependency>
+			<!-- Spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${version.spring}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${version.spring}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${version.spring}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-jpa</artifactId>
+				<version>${version.spring.data}</version>
+			</dependency>
 
-            <!-- Servlet Api -->
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
-                <scope>provided</scope>
-            </dependency>
+			<!-- Logging -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${version.slf4j}</version>
+			</dependency>
 
-            <!-- Testing -->
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${version.junit}</version>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+			<!-- Servlet Api -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.1.0</version>
+				<scope>provided</scope>
+			</dependency>
 
-    <build>
-        <pluginManagement>
-            <plugins>   
-                <plugin>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>2.2</version>
-                    <configuration>
-                        <failOnMissingWebXml>false</failOnMissingWebXml>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+			<!-- Testing -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${version.junit}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.2</version>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>

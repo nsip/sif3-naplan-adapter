@@ -21,12 +21,12 @@ public class NaplanClient extends APIClient {
 		return new NaplanClient(applicationKey, password);
 	}
 
-	public TestDataClient testDataClient() {
-		return new TestDataClient(NaplanClient.baseEndpoint, this.applicationKey, this.password);
+	public NaplanDataClient testDataClient() {
+		return new NaplanDataClient(NaplanClient.baseEndpoint, this.applicationKey, this.password);
 	}
 
-	public TestDataClient testDataClient(String applicationKey, String password) {
-		return new TestDataClient(NaplanClient.baseEndpoint, applicationKey, password);
+	public NaplanDataClient testDataClient(String applicationKey, String password) {
+		return new NaplanDataClient(NaplanClient.baseEndpoint, applicationKey, password);
 	}
 
 	public SchoolListClient schoolListClient() {

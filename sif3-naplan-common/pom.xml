@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>sif3.au.naplan</groupId>
+        <artifactId>sif3-naplan-adapter</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>sif3-naplan-common</artifactId>
+    <name>sif3-naplan-common</name>
+    <description>Common Components for the SIF Naplan Adapter</description>
+    <packaging>jar</packaging>
+
+    <dependencies>
+		<dependency>
+			<groupId>sif3.framework</groupId>
+			<artifactId>sif3-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sif3.datamodel</groupId>
+			<artifactId>sifau-datamodel</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sif3.au.naplan</groupId>
+			<artifactId>naplan-api</artifactId>
+		</dependency>
+    </dependencies>
+
+    <build>
+        <finalName>NaplanCommon</finalName>
+    </build>
+
+</project>

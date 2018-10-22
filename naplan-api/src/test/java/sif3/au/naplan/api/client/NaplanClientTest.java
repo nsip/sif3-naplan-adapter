@@ -34,7 +34,7 @@ public class NaplanClientTest {
 		String applicationKey = "appplicationKey";
 		String password = "password";
 		
-		TestDataClient client = NaplanClient.initialise(endpoint, applicationKey, password).testDataClient();
+		NaplanDataClient client = NaplanClient.initialise(endpoint, applicationKey, password).testDataClient();
 		Assert.assertNotNull("client returned", client);
 		Assert.assertEquals("endpoint set", endpoint, client.endpoint);
 		Assert.assertEquals("password set", password, client.password);
@@ -47,7 +47,7 @@ public class NaplanClientTest {
 		String applicationKey = "appplicationKey";
 		String password = "password";
 		
-		TestDataClient client = NaplanClient.initialise(endpoint).testDataClient(applicationKey, password);
+		NaplanDataClient client = NaplanClient.initialise(endpoint).testDataClient(applicationKey, password);
 		Assert.assertNotNull("client returned", client);
 		Assert.assertEquals("endpoint set", endpoint, client.endpoint);
 		Assert.assertEquals("password set", password, client.password);

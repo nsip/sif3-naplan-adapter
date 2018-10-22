@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import sif3.au.naplan.api.model.NaplanRequest;
 
-public class TestDataClientTest {
+public class NaplanDataClientTest {
 	
 	@Test
 	public void testConstructor() {
@@ -13,7 +13,7 @@ public class TestDataClientTest {
 		String applicationKey = "appplicationKey";
 		String password = "password";
 		
-		TestDataClient client = new TestDataClient(endpoint, applicationKey, password);
+		NaplanDataClient client = new NaplanDataClient(endpoint, applicationKey, password);
 		Assert.assertEquals("endpoint set", endpoint, client.endpoint);
 		Assert.assertEquals("password set", password, client.password);
 		Assert.assertEquals("applicationKey set", applicationKey, client.applicationKey);
@@ -25,10 +25,10 @@ public class TestDataClientTest {
 		String applicationKey = "appplicationKey";
 		String password = "password";
 		
-		TestDataClient client = new TestDataClient(endpoint, applicationKey, password);
+		NaplanDataClient client = new NaplanDataClient(endpoint, applicationKey, password);
 		NaplanRequest request = client.prepareRequest();
 		Assert.assertNotNull("request returned", request);
 		Assert.assertTrue("endpoint correct", request.buildUrl().startsWith(endpoint));
-		Assert.assertTrue("path correct", request.buildUrl().endsWith(TestDataClient.PATH));
+		Assert.assertTrue("path correct", request.buildUrl().endsWith(NaplanDataClient.PATH));
 	}
 }

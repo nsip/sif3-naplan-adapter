@@ -1,0 +1,81 @@
+<environment xmlns="http://www.sifassociation.org/infrastructure/3.2.1" type="DIRECT">
+  <sessionToken></sessionToken>
+  <solutionId>NAPLAN</solutionId>
+  <defaultZone id="NAPLAN">
+    <description>Naplan Zone Template</description>
+  </defaultZone>
+  <authenticationMethod>SIF_HMACSHA256</authenticationMethod>
+  <consumerName></consumerName>
+  <infrastructureServices>
+    <infrastructureService name="environment">environments/</infrastructureService>
+    <infrastructureService name="requestsConnector">requests</infrastructureService>
+  </infrastructureServices>
+  <provisionedZones>
+    <provisionedZone id="NAPLAN">
+      <services>
+        <!-- NAPLAN Proxy -->
+        <service name="TestData" contextId="DEFAULT" type="OBJECT">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+        <service name="SchoolList" contextId="DEFAULT" type="OBJECT">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+        <service name="SchoolInfos/{}/SchoolData" contextId="DEFAULT" type="SERVICEPATH">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+        <!-- SIF Object -->
+        <service name="NAPCodeFrames" contextId="DEFAULT" type="OBJECT">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+        <service name="NAPTests" contextId="DEFAULT" type="OBJECT">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+        <service name="NAPTestlets" contextId="DEFAULT" type="OBJECT">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+        <service name="NAPTestItems" contextId="DEFAULT" type="OBJECT">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+        <service name="SchoolInfos" contextId="DEFAULT" type="OBJECT">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+        <service name="SchoolInfos/{}/StudentPersonals" contextId="DEFAULT" type="SERVICEPATH">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+        <service name="SchoolInfos/{}/NAPEventStudentLinks" contextId="DEFAULT" type="SERVICEPATH">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+        <service name="SchoolInfos/{}/NAPStudentResponseSets" contextId="DEFAULT" type="SERVICEPATH">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+        <service name="SchoolInfos/{}/NAPTestScoreSummarys" contextId="DEFAULT" type="SERVICEPATH">
+          <rights>
+            <right type="QUERY">APPROVED</right>
+          </rights>
+        </service>
+      </services>
+    </provisionedZone>
+  </provisionedZones>
+</environment>

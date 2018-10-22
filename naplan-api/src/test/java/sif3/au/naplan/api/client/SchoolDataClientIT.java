@@ -9,7 +9,7 @@ import sif3.au.naplan.api.util.TestProperties;
 public class SchoolDataClientIT {
 
 	@Test
-	public void testSchoolData() throws Exception {
+	public void testSchoolDataWithRefId() throws Exception {
 		NaplanClient client = NaplanClient.initialise(TestProperties.getEndpoint(), TestProperties.getApplicationKey(), TestProperties.getPassword());
 		NaplanResponse response = client.schoolListClient().prepareRequest().executeGet();
 		Assert.assertNotNull("response returned", response);

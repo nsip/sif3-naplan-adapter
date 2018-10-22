@@ -6,7 +6,7 @@ import org.junit.Test;
 import sif3.au.naplan.api.model.NaplanResponse;
 import sif3.au.naplan.api.util.TestProperties;
 
-public class TestDataClientTestIT {
+public class DataClientIT {
 	
 	@Test
 	public void testTestData() throws Exception {
