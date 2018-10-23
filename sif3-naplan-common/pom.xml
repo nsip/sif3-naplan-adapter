@@ -18,8 +18,12 @@
 			<artifactId>sif3-common</artifactId>
 		</dependency>
 		<dependency>
+			<!--
 			<groupId>sif3.datamodel</groupId>
 			<artifactId>sifau-datamodel</artifactId>
+			-->
+			<groupId>${group.sif3.datamodel}</groupId>
+			<artifactId>${artifactId.sif3.datamodel}</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>sif3.au.naplan</groupId>

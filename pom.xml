@@ -12,9 +12,21 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 
-		<version.sif3.framework>0.13.0</version.sif3.framework>
+		<!-- SIF3 Framework Properties -->
+		<version.sif3.framework>0.14.0-beta</version.sif3.framework>
+		
+		<!-- SIF AU Data Model Properties -->
+		<!-- Remote Repository 	
+		<group.sif3.datamodel>sif3.datamodel</group.sif3.datamodel>
+		<artifactId.sif3.datamodel>sifau-datamodel</artifactId.sif3.datamodel>
 		<version.sif3.datamodel>au-3.4.3</version.sif3.datamodel>
-
+		-->
+		
+		<!-- Local Dev Environment Setup -->
+		<group.sif3.datamodel>sifau</group.sif3.datamodel>
+		<artifactId.sif3.datamodel>sif3-au-datamodel</artifactId.sif3.datamodel>
+		<version.sif3.datamodel>3.4.4</version.sif3.datamodel>
+		
 		<version.slf4j>1.7.25</version.slf4j>
 		<version.junit>4.12</version.junit>
 		<version.spring>4.3.19.RELEASE</version.spring>
@@ -55,8 +67,8 @@
 				<version>${version.sif3.framework}</version>
 			</dependency>
 			<dependency>
-				<groupId>sif3.datamodel</groupId>
-				<artifactId>sifau-datamodel</artifactId>
+				<groupId>${group.sif3.datamodel}</groupId>
+				<artifactId>${artifactId.sif3.datamodel}</artifactId>
 				<version>${version.sif3.datamodel}</version>
 			</dependency>
 
