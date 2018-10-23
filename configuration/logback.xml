@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- For assistance related to logback-translator or configuration  -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user             -->
+<!--                                                                -->
+<!-- For professional support please see                            -->
+<!--    http://www.qos.ch/shop/products/professionalSupport         -->
+<!--                                                                -->
+<configuration>
+
+<!-- 
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{ABSOLUTE} %5p %c{2}:%L - %m%n</pattern>
+    </encoder>
+  </appender>
+ -->  
+  
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%d %-2level %logger - %msg%n</Pattern>
+    </layout>
+  </appender>
+  
+  
+  <appender name="file" class="ch.qos.logback.core.FileAppender">
+    <File>/Development/GitHubRepositories/sif3-naplan-adapter/log/naplanSIFAdapter.log</File>
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%d %-2level %logger - %msg%n</Pattern>
+    </layout>
+  </appender>
+  <logger name="org.hibernate" level="INFO"/>
+  <logger name="com.mchange.v2" level="INFO"/>
+  <logger name="ch.qos.logback" level="ERROR"/>
+  <logger name="org.quartz" level="ERROR"/>
+  <logger name="org.springframework" level="INFO"/>  
+
+  <logger name="au.com.systemic.framework.dao.sql" level="ERROR"/>
+
+  <logger name="sif3.common.utils.JAXBUtils" level="DEBUG"/>
+  <logger name="sif3.infra" level="DEBUG"/>
+  <logger name="sif3.infra.rest.queue.LocalConsumerQueue" level="INFO"/>
+  <logger name="sif3.infra.rest.queue.LocalMessageConsumer" level="INFO"/>
+  <logger name="sif3.infra.rest.queue.RemoteMessageQueueReader" level="INFO"/>
+  <logger name="sif3.infra.rest.client.EventClient" level="DEBUG"/>
+  <logger name="sif3.infra.rest.client.MessageClient" level="DEBUG"/>
+  <logger name="sif3.infra.rest.client.ClientConfigMgr" level="DEBUG"/>
+  <logger name="sif3.infra.rest.resource.DataModelResource" level="DEBUG"/>
+  <root level="DEBUG">
+    <appender-ref ref="stdout"/>
+    <appender-ref ref="file"/>
+  </root>
+</configuration>
